@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 function PatientTracker() {
   const [patients, setPatients] = useState([
-    { id: 'P01', name: 'Ramesh Kumar', room: '101-A' },
-    { id: 'P02', name: 'Suresh Verma', room: '102-B' },
-    { id: 'P03', name: 'Anita Sharma', room: '105-A' }
+    { id: 'P01', name: 'Jaiminpuri Bava', room: '101-A' },
+    { id: 'P02', name: 'Patel Brijesh', room: '102-B' },
+    { id: 'P03', name: 'Prajapati Harsh', room: '105-A' }
   ]);
   const [newName, setNewName] = useState('');
 
