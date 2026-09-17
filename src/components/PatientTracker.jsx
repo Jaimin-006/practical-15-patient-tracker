@@ -14,7 +14,6 @@ function PatientTracker() {
     const newId = 'P0' + (patients.length + 1);
     const newPatient = { id: newId, name: newName, room: '201-B' };
 
-    // Adding without spread operator
     const updatedList = patients.concat(newPatient);
     setPatients(updatedList);
     setNewName('');
@@ -28,8 +27,10 @@ function PatientTracker() {
   }
 
   return (
-    <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-gray-200">
-      <h2 className="text-xl font-bold text-cyan-800 mb-4">Hospital Patient Monitor</h2>
+    <div className="p-6 max-w-md mx-auto bg-white rounded-lg shadow-sm border border-teal-200">
+      <h2 className="text-xl font-bold text-teal-900 mb-4 border-b border-teal-100 pb-2">
+        Hospital Patient Monitor
+      </h2>
       
       <div className="flex space-x-2 mb-4">
         <input
@@ -37,11 +38,11 @@ function PatientTracker() {
           placeholder="Patient Name"
           value={newName}
           onChange={(e) => setNewName(e.target.value)}
-          className="flex-1 p-2 border border-gray-300 rounded text-sm"
+          className="flex-1 p-2 border border-slate-300 rounded-md text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
         <button
           onClick={addPatient}
-          className="bg-cyan-600 text-white px-3 py-2 rounded text-sm hover:bg-cyan-700"
+          className="bg-teal-700 hover:bg-teal-800 text-white px-4 py-2 rounded-md text-sm font-semibold transition"
         >
           Admit
         </button>
@@ -52,17 +53,17 @@ function PatientTracker() {
           return (
             <div
               key={patient.id}
-              className="p-3 bg-cyan-50 border border-cyan-200 rounded flex justify-between items-center"
+              className="p-3 bg-teal-50/70 border border-teal-200 rounded-md flex justify-between items-center"
             >
               <div>
-                <p className="font-bold text-cyan-900 text-sm">
-                  {patient.name} <span className="text-xs text-gray-500">({patient.id})</span>
+                <p className="font-bold text-teal-950 text-sm">
+                  {patient.name} <span className="text-xs text-teal-700">({patient.id})</span>
                 </p>
-                <p className="text-xs text-gray-600">Room: {patient.room}</p>
+                <p className="text-xs text-slate-600">Room: {patient.room}</p>
               </div>
               <button
                 onClick={() => dischargePatient(patient.id)}
-                className="bg-red-500 text-white text-xs px-2 py-1 rounded hover:bg-red-600"
+                className="bg-rose-600 hover:bg-rose-700 text-white text-xs px-3 py-1.5 rounded-md font-semibold transition"
               >
                 Discharge
               </button>
