@@ -28,10 +28,13 @@ function PatientTracker() {
 
   return (
     <div className="p-6 max-w-md mx-auto bg-white rounded-xl shadow-md border border-sky-200/80">
-      <div className="border-b border-sky-100 pb-3 mb-4">
+      <div className="border-b border-sky-100 pb-3 mb-4 flex justify-between items-center">
         <h2 className="text-xl font-bold bg-gradient-to-r from-sky-700 to-blue-700 bg-clip-text text-transparent">
           Hospital Patient Monitor
         </h2>
+        <span className="text-xs font-semibold px-2.5 py-1 bg-sky-100 text-sky-800 rounded-full border border-sky-200">
+          Admitted: {patients.length}
+        </span>
       </div>
       
       <div className="flex space-x-2 mb-4">
